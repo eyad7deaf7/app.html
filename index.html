@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Finance</title>
+    <title>تمويل شخصي</title>
     <style>
         :root {
             --bg-color: #0f0f1a;
@@ -30,6 +30,7 @@
             color: var(--text-color);
             line-height: 1.6;
             padding-bottom: 80px;
+            direction: rtl;
         }
 
         h2 {
@@ -148,12 +149,14 @@
         .progress-bar {
             height: 100%;
             background-color: var(--accent-color);
+            width: 0%;
         }
 
         .category-spending-list {
             display: flex;
             flex-direction: column;
             gap: 12px;
+            margin-top: 8px;
         }
 
         .category-item {
@@ -197,79 +200,62 @@
 <body>
     <div class="container">
         <div class="card balance-card">
-            <div class="label">Total Balance</div>
-            <div class="amount"><small>$</small>12,450.00</div>
+            <div class="label">الرصيد الكلي</div>
+            <div class="amount"><small>$</small>0.00</div>
             
             <div class="income-expense-summary">
                 <div class="summary-item income">
-                    <div class="label">Income</div>
-                    <div class="amount">+$4,200.00</div>
+                    <div class="label">الدخل</div>
+                    <div class="amount">+$0.00</div>
                 </div>
                 <div class="summary-item expense">
-                    <div class="label">Expenses</div>
-                    <div class="amount">-$1,750.00</div>
+                    <div class="label">المصروفات</div>
+                    <div class="amount">-$0.00</div>
                 </div>
             </div>
 
             <div class="progress-container">
-                <div class="progress-bar" style="width: 42%;"></div>
+                <div class="progress-bar" style="width: 0%;"></div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-header">
-                <h2>Spending by Category</h2>
+                <h2>الإنفاق حسب الفئة</h2>
             </div>
             <div class="category-spending-list">
-                <div class="category-item">
-                    <div class="category-name">Food</div>
-                    <div class="category-bar-wrapper">
-                        <div class="category-bar" style="width: 60%; background-color: #00b894;"></div>
-                    </div>
-                    <div class="category-amount">$450</div>
-                </div>
-                <div class="category-item">
-                    <div class="category-name">Transport</div>
-                    <div class="category-bar-wrapper">
-                        <div class="category-bar" style="width: 30%; background-color: #0984e3;"></div>
-                    </div>
-                    <div class="category-amount">$220</div>
-                </div>
+                <!-- يتم ملؤها ديناميكياً -->
             </div>
         </div>
 
         <div class="card">
             <div class="card-header">
-                <h2>Recent Transactions</h2>
+                <h2>المعاملات الأخيرة</h2>
             </div>
             <div class="transaction-filters">
-                <input type="text" placeholder="Search transactions...">
+                <input type="text" placeholder="ابحث في المعاملات...">
                 <select>
-                    <option value="">All Categories</option>
+                    <option value="">كل الفئات</option>
                 </select>
             </div>
             <div class="transaction-list">
-                <div class="transaction-item">
-                    <div>
-                        <strong>Grocery Store</strong>
-                        <div style="font-size: 0.8rem; color: #a0a0a0;">Food • Sep 3, 2026</div>
-                    </div>
-                    <div style="color: #ef4444; font-weight: 600;">-$85.00</div>
-                </div>
+                <!-- يتم ملؤها ديناميكياً -->
             </div>
         </div>
     </div>
 
     <nav class="bottom-nav">
         <a href="#" class="nav-item active">
-            <span>📊</span>Dashboard
+            <span>📊</span>لوحة
         </a>
         <a href="#" class="nav-item">
-            <span>💳</span>Transactions
+            <span>💳</span>المعاملات
         </a>
         <a href="#" class="nav-item">
-            <span>⚙️</span>Settings
+            <span>⚙️</span>الإعدادات
         </a>
     </nav>
+
+    <script src="app.js"></script>
 </body>
 </html>
